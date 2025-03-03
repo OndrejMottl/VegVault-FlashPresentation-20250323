@@ -24,9 +24,12 @@ knitr::opts_chunk$set(
 
 # [VegVault]{.bold .r-fit-text} {.title}
 
+[   --- press START to begin ---   ]{.text-center .r-fit-text .text-pixel-font} 
+
 Ondřej Mottl
 
 2025-03-23
+
 
 # [References]{.bold .r-fit-text} {.title}
 
