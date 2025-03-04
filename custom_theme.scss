@@ -34,10 +34,7 @@ $blueLight: #52758f;
 $greenDark: #5d7841;
 $greenLight: #9bc058;
 
-$body-color: $blueDark !default;
-$link-color: $greenDark !default;
-$selection-bg: $greenDark !default;
-$code-color: $blueDark !default;
+$color-body: $blueDark !default;
 
 .bold {
   font-weight: bold;
@@ -127,17 +124,19 @@ body {
   font-family: $mainFont;
   font-size: $mainFontSize;
   line-height: $body-line-height;
-  color: $body-color;
+  color: $color-body;
   background-color: $backgroundColor;
 }
 
 a {
-  color: $link-color;
+  color:  $white !important;
+  $selection-bg: $greenDark !important;
   text-decoration: none;
-  transition: color 0.3s ease;
+  background-color: $greenDark;
 
   &:hover {
-    text-decoration: underline;
+     color: $greenDark !important;
+     background-color: $white;
   }
 }
 
@@ -178,6 +177,7 @@ h3,
 
 /* Code block */
 code {
+  $code-color: $blueDark !default;
   background-color: darken($backgroundColor, 20%);
   padding: $smallMargin;
   border-radius: 5px;
@@ -219,12 +219,12 @@ ul {
 .reveal .subtitle {
   color: $backgroundColor;
   background-color: $blueLight;
-  
+
   text-align: center;
 }
 
 .reveal .inverse {
-    background-color: $body-color;
+  background-color: $color-body;
   color: $backgroundColor;
 }
 
@@ -238,5 +238,7 @@ ul {
   border-bottom: 3px solid $beigeDark;
   border-right: 3px solid $beigeDark;
   background-color: $blueLight;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
 }
