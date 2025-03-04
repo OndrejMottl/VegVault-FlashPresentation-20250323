@@ -20,6 +20,16 @@ knitr::opts_chunk$set(
   fig.align = "center",
   out.width = "100%"
 )
+
+include_local_figure <- function(data_source) {
+  knitr::include_graphics(
+    path = here::here(
+      "Materials",
+      data_source
+    ),
+    error = TRUE
+  )
+}
 ```
 
 # [VegVault]{.bold .r-fit-text} {.title}
@@ -29,6 +39,45 @@ knitr::opts_chunk$set(
 Ondřej Mottl
 
 2025-03-23
+
+
+## About me
+
+:::: {.columns}
+
+::: {.column width="25%"}
+```{r}
+#| label: personal sticker
+include_local_figure("Ondrej_Mottl-transparent-shadow.png")
+```
+
+```{r}
+#| label: linktree QR
+include_local_figure("qr_linktree.png")
+```
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="62%"}
+[Ondra Mottl]{.bold .r-fit-text .text-color-white .text-pixel-font}
+Assistant Professor at [Charles University](https://cuni.cz/UK-1.html)
+<br>
+
+* 📧 ondrej.mottl(at)natur.cuni.cz
+* 🐦 [@OndrejMottl](https://twitter.com/OndrejMottl)
+* 🦋 [ondrejmottl.bsky.social](https://bsky.app/profile/ondrejmottl.bsky.social)
+* 🐱 [Github](https://github.com/OndrejMottl)
+* 🆔 [ORCID](https://orcid.org/0000-0002-9796-5081)
+* 🌐 [Personal webpage](https://ondrejmottl.github.io/)
+* 🧑‍💻 [Laboratory of Quantitative Ecology](https://ondrejmottl.github.io/lab/about_the_lab.html)
+:::
+
+::::
+
+## Laboratory of Quantitative Ecology
+
 
 
 # [References]{.bold .r-fit-text} {.title}
