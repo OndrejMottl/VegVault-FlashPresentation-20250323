@@ -66,7 +66,6 @@ Assistant Professor at [Charles University](https://cuni.cz/UK-1.html)
 <br>
 
 * 📧 ondrej.mottl(at)natur.cuni.cz
-* 🐦 [@OndrejMottl](https://twitter.com/OndrejMottl)
 * 🦋 [ondrejmottl.bsky.social](https://bsky.app/profile/ondrejmottl.bsky.social)
 * 🐱 [Github](https://github.com/OndrejMottl)
 * 🆔 [ORCID](https://orcid.org/0000-0002-9796-5081)
@@ -78,6 +77,29 @@ Assistant Professor at [Charles University](https://cuni.cz/UK-1.html)
 
 ## Laboratory of Quantitative Ecology
 
+:::: {.columns}
+
+::: {.column width="60%" .incremental}
+
+* [vegetation biodiversity]{.text-background-blue-dark}, including taxonomic, functional, and phylogenetic dimensions 
+
+* state-of-the-Art [Tools]{.text-background-brown-dark} and [Methods]{.text-background-brown-dark}
+
+* [interdisciplinary]{.text-background-green-dark} approach
+
+* more info at [bit.ly/CUNI_QuantitativeEcology](https://bit.ly/CUNI_QuantitativeEcology)
+
+:::
+
+::: {.column width="40%"}
+
+```{r}
+#| label: LoQE logo
+include_local_figure("lab_logo_nobg.png")
+```
+:::
+
+::::
 
 
 # [References]{.bold .r-fit-text} {.title}
