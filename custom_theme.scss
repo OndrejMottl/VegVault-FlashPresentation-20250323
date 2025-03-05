@@ -35,6 +35,7 @@ $greenDark: #5d7841;
 $greenLight: #9bc058;
 
 $color-body: $blueDark !default;
+$backgroundColor: $beigeLight !default;
 
 .bold {
   font-weight: bold;
@@ -92,27 +93,73 @@ $color-body: $blueDark !default;
   color: $greenLight;
 }
 
+.text-background-white {
+  background-color: $white;
+  color: $backgroundColor;
+}
+
+.text-background-brown-dark {
+  background-color: $brownDark;
+  color: $backgroundColor;
+}
+
+.text-background-brown-light {
+  background-color: $brownLight;
+  color: $backgroundColor;
+
+}
+
+.text-background-beige-dark {
+  background-color: $beigeDark;
+  color: $backgroundColor;
+}
+
+.text-background-beige-light {
+  background-color: $beigeLight;
+  color: $backgroundColor;
+}
+
+.text-background-blue-dark {
+  background-color: $blueDark;
+  color: $backgroundColor;
+}
+
+.text-background-blue-light {
+  background-color: $blueLight;
+  color: $backgroundColor;
+}
+
+.text-background-green-dark {
+  background-color: $greenDark;
+  color: $backgroundColor;
+}
+
+.text-background-green-light {
+  background-color: $greenLight;
+  color: $backgroundColor;
+}
+
 .textcenter {
   text-align: center;
 }
 
-// Background
-$backgroundColor: $beigeLight !default;
 
 // Typography
 $mainFont: "Renogate", sans-serif !default;
-$mainFontSize: 1rem;
-$h1FontSize: 2.5rem;
-$h2FontSize: 2rem;
-$h3FontSize: 1.5rem;
+$mainFontSize: 30px;
 $body-line-height: 1.5;
 
-$headingFont-h1: "Minecraft" !default;
-$headingFont: "Renogate" !default;
+$headingMargin: 0;
+$headingFont: "Minecraft" !default;
 $headingLineHeight: 1.2;
 $headingLetterSpacing: normal;
 $headingTextShadow: none;
 $headingFontWeight: normal;
+
+$heading1Size: 3.77em;
+$heading2Size: 2.11em;
+$heading3Size: 1.55em;
+$heading4Size: 1em;
 
 // Layout
 $content-max-width: 900px;
@@ -125,27 +172,25 @@ body {
   font-size: $mainFontSize;
   line-height: $body-line-height;
   color: $color-body;
-  background-color: $backgroundColor;
+  background-color: $backgroundColor !important;
 }
 
 a {
-  color:  $white !important;
-  $selection-bg: $greenDark !important;
+  color:  $greenDark !important;
   text-decoration: none;
-  background-color: $greenDark;
 
   &:hover {
      color: $greenDark !important;
-     background-color: $white;
+     background-color: $white !important;
   }
 }
 
 /* Headings */
 h1,
 .reveal h1 {
-  font-family: $headingFont-h1;
+  font-family: $headingFont;
   color: $white;
-  font-size: $h1FontSize;
+  font-size: $heading1Size;
   line-height: $headingLineHeight;
   letter-spacing: $headingLetterSpacing;
   font-weight: $headingFontWeight;
@@ -157,7 +202,7 @@ h2,
 .reveal h2 {
   font-family: $headingFont;
   color: $blueLight;
-  font-size: $h2FontSize;
+  font-size: $heading2Size;
   line-height: $headingLineHeight;
   letter-spacing: $headingLetterSpacing;
   font-weight: $headingFontWeight;
@@ -168,7 +213,7 @@ h3,
 .reveal h3 {
   font-family: $headingFont;
   color: $blueDark;
-  font-size: $h3FontSize;
+  font-size: $heading3Size;
   line-height: $headingLineHeight;
   letter-spacing: $headingLetterSpacing;
   font-weight: $headingFontWeight;
@@ -212,7 +257,7 @@ ul {
 /* Specialised sections */
 .reveal .title {
   color: $backgroundColor;
-  background-color: $headingColor;
+  background-color: $blueDark;
   text-align: center;
 }
 
