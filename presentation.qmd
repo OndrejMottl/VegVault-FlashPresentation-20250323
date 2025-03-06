@@ -8,6 +8,8 @@ format:
     preview-links: auto
     output-file: "index"
     output-ext: "html"
+    code-line-numbers: false
+    code-overflow: wrap
 ---
 
 ```{r}
@@ -20,13 +22,369 @@ knitr::opts_chunk$set(
   fig.align = "center",
   out.width = "100%"
 )
+
+include_local_figure <- function(data_source) {
+  knitr::include_graphics(
+    path = here::here(
+      "Materials",
+      data_source
+    ),
+    error = TRUE
+  )
+}
 ```
 
 # [VegVault]{.bold .r-fit-text} {.title}
 
+[   --- press START to begin ---   ]{.text-center .r-fit-text .text-pixel-font} 
+
 Ondřej Mottl
 
 2025-03-23
+
+## {background-image="Materials/poster_export/bg.png" background-opacity="0.50"}
+
+:::{.blockquote .fragment .textcenter}
+Most biodiversity models rely on recent data—❌but ecosystems evolve over millennia!
+:::
+
+<br>
+
+:::{.blockquote .fragment .textcenter}
+There are many biodiversity databases—❌but they are often not connected!
+:::
+
+<br>
+
+:::{.blockquote .fragment .textcenter}
+What if we want to combine data from multiple databases and analyze them together? 🤔
+:::
+
+::: {.footer}
+Image created by Bing 
+:::
+
+## About me
+
+:::: {.columns}
+
+::: {.column width="25%"}
+```{r}
+#| label: personal sticker
+include_local_figure("poster_export/c1.png")
+```
+
+```{r}
+#| label: linktree QR
+include_local_figure("About_me/qr_linktree.png")
+```
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="62%"}
+[Ondra Mottl]{.bold .r-fit-text .text-color-white .text-pixel-font}
+Assistant Professor at [Charles University](https://cuni.cz/UK-1.html)
+<br>
+
+* 📧 ondrej.mottl(at)natur.cuni.cz
+* 🦋 [ondrejmottl.bsky.social](https://bsky.app/profile/ondrejmottl.bsky.social)
+* 🐱 [Github](https://github.com/OndrejMottl)
+* 🆔 [ORCID](https://orcid.org/0000-0002-9796-5081)
+* 🌐 [Personal webpage](https://ondrejmottl.github.io/)
+* 🧑‍💻 [Laboratory of Quantitative Ecology](https://ondrejmottl.github.io/lab/about_the_lab.html)
+:::
+
+::::
+
+## Laboratory of Quantitative Ecology
+
+:::: {.columns}
+
+::: {.column width="60%" .incremental}
+
+* [vegetation biodiversity]{.text-background-blue-dark}, including taxonomic, functional, and phylogenetic dimensions 
+
+* state-of-the-Art [Tools]{.text-background-brown-dark} and [Methods]{.text-background-brown-dark}
+
+* [interdisciplinary]{.text-background-green-dark} approach
+
+* more info at [bit.ly/CUNI_QuantitativeEcology](https://bit.ly/CUNI_QuantitativeEcology)
+
+:::
+
+::: {.column width="40%"}
+
+```{r}
+#| label: LoQE logo
+include_local_figure("Logos/lab_logo_nobg.png")
+```
+:::
+
+::::
+
+## [VegVault]{.bold}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| label: VegVault logo
+include_local_figure("Logos/VegVault_logo.png")
+```
+:::
+
+::: {.column width="50%" .incremental}
+
+* A global database linking paleo- & neo-vegetation data with functional traits & abiotic drivers! 
+* A powerful tool for researchers exploring biodiversity dynamics across time & space
+* 🔗 Website: [bit.ly/VegVault](bit.ly/VegVault)
+
+:::
+
+::::
+
+## [VegVault]{.bold}
+
+:::: {.columns}
+
+::: {.column width="35%"}
+
+* 🌿 Paleoecological records (Neotoma, FOSSILPOL)
+* 🌱 Contemporary vegetation (BIEN, sPlotOpen)
+* 🌾 Functional traits (TRY)
+* 🌍 Climate & soil data (CHELSA, WoSIS)
+:::
+
+::: {.column width="65%"}
+
+```{r}
+#| label: Scheme
+include_local_figure("VegVault/assembly_viz_03.png")
+```
+:::
+
+::::
+
+## [VegVault]{.bold}
+
+🔢In numbers: 110 GB of SQLite data | 29 tables & 87 variables | 480,000+ datasets | 13M+ samples  | 110,000+ taxa | 11M+ trait values | 8 abiotic variables
+
+::: {.fragment}
+```{r}
+#| label: n_datasets - large
+include_local_figure("VegVault/p_n_datasetes_per_type_per_source_type .png")
+```
+:::
+
+
+## [VegVault]{.bold}
+
+Interdisciplinary integration:
+
+:::: {.columns}
+
+::: {.column width="65%" .fragment}
+
+```{r}
+#| label: JSDM_exampe
+include_local_figure("Examples/fig_cz_jsdm.png")
+```
+:::
+
+::: {.column width="35%" .incremental}
+
+<br>
+
+* Plot based data (both contemporary and paleo)
+* Abiotic data linked to each plot
+* Taxonomic classification
+
+:::
+
+::::
+
+
+## {[vaultkeepr]{.bold}}
+
+An R package📦–your key🔑 to VegVault🌿🔒🏛️
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+```{r}
+#| label: vaultkeepr logo
+include_local_figure("Logos/vaultkeeper_logo.png")
+```
+
+[![CRAN-status](https://www.r-pkg.org/badges/version/vaultkeepr.png)](https://CRAN.R-project.org/package=vaultkeepr) [![R-CMD-check](https://github.com/OndrejMottl/vaultkeepr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/OndrejMottl/vaultkeepr/actions/workflows/R-CMD-check.yaml) [![Codecov-test-coverage](https://codecov.io/gh/OndrejMottl/vaultkeepr/branch/main/graph/badge.svg)](https://app.codecov.io/gh/OndrejMottl/vaultkeepr?branch=main)
+
+:::
+
+::: {.column width="60%" .incremental}
+
+<br>
+<br>
+
+* ✅ No SQL required – just load & go!
+* ✅ Filter by taxa, traits, time & space
+* ✅ Directly usable in R for analysis
+* 🔗 Learn more: [bit.ly/vaultkeepr](bit.ly/vaultkeepr)
+
+:::
+
+::::
+
+# [Use cases]{.bold .r-fit-text} {.inverse}
+
+##
+
+<br>
+
+:::{.blockquote .textcenter}
+Spatiotemporal patterns of the Picea genus across North America since the Last Glaciar Maximum
+:::
+
+<br>
+
+```{r}
+#| label: erb_1
+include_local_figure("poster_export/erb1.png")
+```
+
+## Example 1
+
+:::: {.columns}
+
+::: {.column width="50%"}
+Goal: To retrieve data for the genus *Picea* by selecting both contemporary and fossil pollen plot datasets, filtering samples by geographic boundaries (North America) and temporal range (0 to 15,000 yr BP), and harmonizing taxa to the genus level. 
+:::
+
+::: {.column width="50%" .fragment} 
+
+```{r}
+#| label: Picea_map
+#| eval: false
+#| echo: true
+#| include: true
+data_na_plots_picea <-
+  # Access the VegVault
+  vaultkeepr::open_vault(path = "<path_to_VegVault>") %>%
+  # Start by adding dataset information
+  vaultkeepr::get_datasets() %>%
+  # Select both contemporary and paleo plot data
+  vaultkeepr::select_dataset_by_type(
+    sel_dataset_type = c(
+      "vegetation_plot",
+      "fossil_pollen_archive"
+    )
+  ) %>%
+  # Limit data to North America
+  vaultkeepr::select_dataset_by_geo(
+    lat_lim = c(22, 60),
+    long_lim = c(-135, -60)
+  ) %>%
+  # Add samples
+  vaultkeepr::get_samples() %>%
+  # Limit the samples by age
+  vaultkeepr::select_samples_by_age(
+    age_lim = c(0, 15e3)
+  ) %>%
+  # Add taxa & classify all data to a genus level
+  vaultkeepr::get_taxa(classify_to = "genus") %>%
+  # Extract only Picea data
+  vaultkeepr::select_taxa_by_name(sel_taxa = "Picea") %>%
+  vaultkeepr::extract_data()
+```
+:::
+
+::::
+
+## Example 1
+
+```{r}
+#| label: Picea_map_plot
+include_local_figure("Examples/fig_na_plots_picea.png")
+```
+
+##
+
+<br>
+
+:::{.blockquote .textcenter}
+Patterns of CWM of plant height for South and Central Latin America between 6-12 ka
+:::
+
+```{r}
+#| label: erb_2
+include_local_figure("poster_export/erb2.png")
+```
+
+## Example 2
+
+:::: {.columns}
+
+::: {.column width="50%"}
+Goal: obtaining data to be able to reconstruct plant height for South and Central America between 6-12 ka cal yr BP (thousand years before present).
+:::
+
+::: {.column width="50%" .fragment} 
+
+```{r}
+#| label: LA_cwm
+#| eval: false
+#| echo: true
+#| include: true
+data_la_traits <-
+  # Acess the VegVault file
+  vaultkeepr::open_vault(path = "<path_to_VegVault>") %>%
+  # Add the dataset information
+  vaultkeepr::get_datasets() %>%
+  # Select contemporarly plot data and climate
+  vaultkeepr::select_dataset_by_type(
+    sel_dataset_type = c(
+      "fossil_pollen_archive",
+      "traits"
+    )
+  ) %>%
+  # Limit data to South and Central America
+  vaultkeepr::select_dataset_by_geo(
+    lat_lim = c(-53, 28),
+    long_lim = c(-110, -38),
+    sel_dataset_type = c(
+      "fossil_pollen_archive",
+      "traits"
+    )
+  ) %>%
+  # Add samples
+  vaultkeepr::get_samples() %>%
+  # Limit to 6-12 ka yr BP
+  vaultkeepr::select_samples_by_age(
+    age_lim = c(6e3, 12e3)
+  ) %>%
+  # add taxa & clasify all data to a genus level
+  vaultkeepr::get_taxa(classify_to = "genus") %>%
+  # add trait information & clasify all data to a genus level
+  vaultkeepr::get_traits(classify_to = "genus") %>%
+  # Only select the plant height
+  vaultkeepr::select_traits_by_domain_name(
+    sel_domain = "Plant height"
+  ) %>%
+  vaultkeepr::extract_data()
+```
+:::
+
+::::
+
+## Example 2
+
+```{r}
+#| label: LA_cwm_plot
+include_local_figure("Examples/fig_la_merge.png")
+```
 
 # [References]{.bold .r-fit-text} {.title}
 

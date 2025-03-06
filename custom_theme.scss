@@ -1,8 +1,18 @@
 /*-- scss:defaults --*/
 
-@import url(./fonts/league-gothic/league-gothic.css);
-@import url(https://fonts.googleapis.com/css?family=News+Cycle:400,700);
-@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic);
+@font-face {
+  font-family: "Renogate" !important;
+  src: local("Fonts/Renogare-Regular.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Minecraft" !important;
+  src: local("Fonts/Minecraft.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 
 // Vertical spacing between blocks of text
 $smallMargin: 5px;
@@ -10,73 +20,22 @@ $blockMargin: 10px;
 $largeMargin: 20px;
 
 // Colors
-$black: #000000ff;
-$gray: #808080ff;
-$byzantium: #8f286fff;
-$harvest-gold: #eca400ff;
-$persian-green: #1b998bff;
-$cerulean: #006992ff;
 $white: #ffffffff;
 
-$color-primary: $black !default;
-$color-secondary: $white !default;
+$brownDark: #8a554e;
+$brownLight: #bc7052;
 
-$color-high-primary: $byzantium !default;
-$color-high-secondary: $harvest-gold !default;
-$color-high-tertiary: $persian-green !default;
+$beigeDark: #ae8a7b;
+$beigeLight: #e6b482;
 
-$body-color: $color-primary !default;
-$link-color: $color-high-tertiary !default;
-$selection-bg: $color-high-tertiary !default;
-$code-color: $color-primary !default;
+$blueDark: #242531;
+$blueLight: #52758f;
 
-// Background of the presentation
-$backgroundColor: $color-secondary !default;
+$greenDark: #5d7841;
+$greenLight: #9bc058;
 
-// Typography
-$mainFont: "Lato", sans-serif !default;
-$mainFontSize: 30px;
-$body-line-height: 1.5;
-
-$headingMargin: 0;
-$headingFont: "League Gothic", sans-serif !default;
-$headingColor: $color-high-primary;
-$headingLineHeight: 1.2;
-$headingLetterSpacing: normal;
-$headingTextTransform: uppercase;
-$headingTextShadow: none;
-$headingFontWeight: normal;
-
-$heading1Size: 3.77em;
-$heading1TextShadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-$heading2Size: 2.11em;
-$heading3Size: 1.55em;
-$heading4Size: 1em;
-
-// Layout
-$content-max-width: 900px;
-
-/*-- scss:rules --*/
-
-/* General text styling */
-body {
-  font-family: $mainFont;
-  font-size: $mainFontSize;
-  line-height: $body-line-height;
-  color: $body-color;
-  background-color: $backgroundColor;
-}
-
-a {
-  color: $link-color;
-  text-decoration: none;
-  transition: color 0.3s ease;
-
-  &:hover {
-    color: darken($link-color, 10%);
-    text-decoration: underline;
-  }
-}
+$color-body: $blueDark !default;
+$backgroundColor: $beigeLight !default;
 
 .bold {
   font-weight: bold;
@@ -94,59 +53,189 @@ a {
   text-decoration: line-through;
 }
 
-.text-color-primary {
-  color: $color-primary;
+.text-pixel-font {
+  font-family: "Minecraft";
 }
 
-.text-color-secondary {
-  color: $color-secondary;
-}
-
-.text-color-highlight-primary {
-  background-color: $color-high-primary;
+.text-color-white {
   color: $white;
 }
 
-.text-color-highlight-secondary {
-  background-color: $color-high-secondary;
-  color: $white;
+.text-color-brown-dark {
+  color: $brownDark;
 }
 
-.text-color-highlight-tertiary {
-  background-color: $color-high-tertiary;
-  color: $white;
+.text-color-brown-light {
+  color: $brownLight;
+}
+
+.text-color-beige-dark {
+  color: $beigeDark;
+}
+
+.text-color-beige-light {
+  color: $beigeLight;
+}
+
+.text-color-blue-dark {
+  color: $blueDark;
+}
+
+.text-color-blue-light {
+  color: $blueLight;
+}
+
+.text-color-green-dark {
+  color: $greenDark;
+}
+
+.text-color-green-light {
+  color: $greenLight;
+}
+
+.text-background-white {
+  background-color: $white;
+  color: $backgroundColor;
+}
+
+.text-background-brown-dark {
+  background-color: $brownDark;
+  color: $backgroundColor;
+}
+
+.text-background-brown-light {
+  background-color: $brownLight;
+  color: $backgroundColor;
+
+}
+
+.text-background-beige-dark {
+  background-color: $beigeDark;
+  color: $backgroundColor;
+}
+
+.text-background-beige-light {
+  background-color: $beigeLight;
+  color: $backgroundColor;
+}
+
+.text-background-blue-dark {
+  background-color: $blueDark;
+  color: $backgroundColor;
+}
+
+.text-background-blue-light {
+  background-color: $blueLight;
+  color: $backgroundColor;
+}
+
+.text-background-green-dark {
+  background-color: $greenDark;
+  color: $backgroundColor;
+}
+
+.text-background-green-light {
+  background-color: $greenLight;
+  color: $backgroundColor;
 }
 
 .textcenter {
   text-align: center;
 }
 
+
+// Typography
+$mainFont: "Renogate", sans-serif !default;
+$mainFontSize: 30px;
+$body-line-height: 1.5;
+
+$headingMargin: 0;
+$headingFont: "Minecraft" !default;
+$headingLineHeight: 1.2;
+$headingLetterSpacing: normal;
+$headingTextShadow: none;
+$headingFontWeight: normal;
+
+$heading1Size: 3.77em;
+$heading2Size: 2.11em;
+$heading3Size: 1.55em;
+$heading4Size: 1em;
+
+// Layout
+$content-max-width: 900px;
+
+/*-- scss:rules --*/
+
+/* General text styling */
+body {
+  font-family: $mainFont;
+  font-size: $mainFontSize;
+  line-height: $body-line-height;
+  color: $color-body;
+  background-color: $backgroundColor !important;
+}
+
+a {
+  color:  $greenDark !important;
+  text-decoration: none;
+
+  &:hover {
+     color: $greenDark !important;
+     background-color: $white !important;
+  }
+}
+
 /* Headings */
 h1,
 .reveal h1 {
   font-family: $headingFont;
+  color: $white;
   font-size: $heading1Size;
-  color: $headingColor;
   line-height: $headingLineHeight;
   letter-spacing: $headingLetterSpacing;
-  text-transform: $headingTextTransform;
-  text-shadow: $heading1TextShadow;
   font-weight: $headingFontWeight;
-  margin: $headingMargin;
+  margin-top: $largeMargin;
+  text-shadow: 3px 4px 5px $blueDark;
 }
 
 h2,
 .reveal h2 {
   font-family: $headingFont;
+  color: $blueLight;
   font-size: $heading2Size;
-  color: $headingColor;
   line-height: $headingLineHeight;
   letter-spacing: $headingLetterSpacing;
-  text-transform: $headingTextTransform;
   font-weight: $headingFontWeight;
-  margin: $headingMargin;
+  margin-top: $blockMargin;
 }
 
+h3,
+.reveal h3 {
+  font-family: $headingFont;
+  color: $blueDark;
+  font-size: $heading3Size;
+  line-height: $headingLineHeight;
+  letter-spacing: $headingLetterSpacing;
+  font-weight: $headingFontWeight;
+  margin-top: $smallMargin;
+}
+
+/* Code block */
+code {
+  $code-color: $blueDark !important;
+  background-color: darken($backgroundColor, 10%) !important;
+  padding: $smallMargin;
+  border-radius: 5px;
+  font-size: $mainFontSize / 2.5;
+  line-height: 1;
+
+}
+
+/* List styling */
+ul {
+  padding-left: 0;
+  margin-left: $blockMargin;
+}
 
 /* Slide content layout */
 .reveal .slides {
@@ -170,50 +259,34 @@ h2,
 
 /* Specialised sections */
 .reveal .title {
-  background-color: $headingColor;
   color: $backgroundColor;
+  background-color: $blueDark;
   text-align: center;
 }
 
 .reveal .subtitle {
-  background-color: $color-high-secondary;
   color: $backgroundColor;
+  background-color: $blueLight;
+
   text-align: center;
 }
 
 .reveal .inverse {
-  color: $color-secondary;
-  background-color: $color-primary;
-}
-
-.reveal .exercise {
-  background-color: $color-high-tertiary;
-  color: $color-secondary;
+  background-color: $color-body;
+  color: $backgroundColor;
 }
 
 /* Blockquote */
 .reveal .blockquote {
   font-style: italic;
-  border-left: 6px solid $color-high-primary;
+  border-left: 6px solid $blueDark;
   padding: $smallMargin;
   border-radius: 25px;
-  border-top: 3px solid $gray;
-  border-bottom: 3px solid $gray;
-  border-right: 3px solid $gray;
-  background-color: $color-secondary;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
-}
-
-/* Code block */
-code {
-  background-color: darken($backgroundColor, 20%);
-  padding: $smallMargin;
-  border-radius: 5px;
-}
-
-/* List styling */
-ul {
-  list-style-type: none;
-  padding-left: 0;
-  margin-left: $blockMargin;
+  border-top: 3px solid $beigeDark;
+  border-bottom: 3px solid $beigeDark;
+  border-right: 3px solid $beigeDark;
+  background-color: $blueLight;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
 }
