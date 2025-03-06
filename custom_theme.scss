@@ -222,10 +222,13 @@ h3,
 
 /* Code block */
 code {
-  $code-color: $blueDark !default;
-  background-color: darken($backgroundColor, 20%);
+  $code-color: $blueDark !important;
+  background-color: darken($backgroundColor, 10%) !important;
   padding: $smallMargin;
   border-radius: 5px;
+  font-size: $mainFontSize / 2.5;
+  line-height: 1;
+
 }
 
 /* List styling */
@@ -276,7 +279,7 @@ ul {
 /* Blockquote */
 .reveal .blockquote {
   font-style: italic;
-  border-left: 6px solid $blueLight;
+  border-left: 6px solid $blueDark;
   padding: $smallMargin;
   border-radius: 25px;
   border-top: 3px solid $beigeDark;
