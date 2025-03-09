@@ -433,7 +433,7 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="Materials/About_me/qr_linktree.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+<p><img data-src="Materials/QR/qr_linktree.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -452,28 +452,87 @@
 </ul>
 </div></div>
 </section>
-<section id="laboratory-of-quantitative-ecology" class="slide level2">
-<h2>Laboratory of Quantitative Ecology</h2>
+<section id="example-project" class="slide level2">
+<h2>Example project</h2>
+<div class="blockquote textcenter">
+<p>Spatiotemporal patterns of the Picea genus across North America since the Last Glaciar Maximum</p>
+</div>
 <div class="columns">
-<div class="column" style="width:60%;">
-<ul>
-<li class="fragment"><p><span class="text-background-blue-dark">vegetation biodiversity</span>, including taxonomic, functional, and phylogenetic dimensions</p></li>
-<li class="fragment"><p>state-of-the-Art <span class="text-background-brown-dark">Tools</span> and <span class="text-background-brown-dark">Methods</span></p></li>
-<li class="fragment"><p><span class="text-background-green-dark">interdisciplinary</span> approach</p></li>
-<li class="fragment"><p>more info at <a href="https://bit.ly/CUNI_QuantitativeEcology">bit.ly/CUNI_QuantitativeEcology</a></p></li>
-</ul>
-</div><div class="column" style="width:40%;">
+<div class="column" style="width:30%;">
+<p><br></p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="Materials/Logos/lab_logo_nobg.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+<p><img data-src="Materials/poster_export/erb2.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
 </div>
+</div><div class="column" style="width:70%;">
+<ul>
+<li class="fragment">Fossil pollen data
+<ul>
+<li class="fragment">Access Neotoma</li>
+<li class="fragment">Download process only NA between 0-15 ka BP</li>
+<li class="fragment">harmonize to genus level</li>
+</ul></li>
+<li class="fragment">Contemporary vegetation data
+<ul>
+<li class="fragment">Access BIEN &amp; sPlotOpen &amp; …</li>
+<li class="fragment">process only NA</li>
+<li class="fragment">harmonize to genus level</li>
+</ul></li>
+</ul>
 </div></div>
 </section>
+<section id="example-project-1" class="slide level2">
+<h2>Example project</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Goal: To retrieve data for the genus <em>Picea</em> by selecting both contemporary and fossil pollen plot datasets, filtering samples by geographic boundaries (North America) and temporal range (0 to 15,000 yr BP), and harmonizing taxa to the genus level.</p>
+</div><div class="column" style="width:50%;">
+<div class="fragment">
+<p>Not so difficult with <span class="bold text-pixel-font text-color-white">VegVault</span>!</p>
+</div>
+<div class="fragment">
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="" aria-hidden="true" tabindex="-1"></a>data_na_plots_picea <span class="ot">&lt;-</span></span>
+<span id="cb1-2"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Access the VegVault</span></span>
+<span id="cb1-3"><a href="" aria-hidden="true" tabindex="-1"></a>  vaultkeepr<span class="sc">::</span><span class="fu">open_vault</span>(<span class="at">path =</span> <span class="st">"&lt;path_to_VegVault&gt;"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb1-4"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Start by adding dataset information</span></span>
+<span id="cb1-5"><a href="" aria-hidden="true" tabindex="-1"></a>  vaultkeepr<span class="sc">::</span><span class="fu">get_datasets</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb1-6"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Select both contemporary and paleo plot data</span></span>
+<span id="cb1-7"><a href="" aria-hidden="true" tabindex="-1"></a>  vaultkeepr<span class="sc">::</span><span class="fu">select_dataset_by_type</span>(</span>
+<span id="cb1-8"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="at">sel_dataset_type =</span> <span class="fu">c</span>(</span>
+<span id="cb1-9"><a href="" aria-hidden="true" tabindex="-1"></a>      <span class="st">"vegetation_plot"</span>,</span>
+<span id="cb1-10"><a href="" aria-hidden="true" tabindex="-1"></a>      <span class="st">"fossil_pollen_archive"</span></span>
+<span id="cb1-11"><a href="" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb1-12"><a href="" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb1-13"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Limit data to North America</span></span>
+<span id="cb1-14"><a href="" aria-hidden="true" tabindex="-1"></a>  vaultkeepr<span class="sc">::</span><span class="fu">select_dataset_by_geo</span>(</span>
+<span id="cb1-15"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="at">lat_lim =</span> <span class="fu">c</span>(<span class="dv">22</span>, <span class="dv">60</span>),</span>
+<span id="cb1-16"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="at">long_lim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">135</span>, <span class="sc">-</span><span class="dv">60</span>)</span>
+<span id="cb1-17"><a href="" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb1-18"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Add samples</span></span>
+<span id="cb1-19"><a href="" aria-hidden="true" tabindex="-1"></a>  vaultkeepr<span class="sc">::</span><span class="fu">get_samples</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb1-20"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Limit the samples by age</span></span>
+<span id="cb1-21"><a href="" aria-hidden="true" tabindex="-1"></a>  vaultkeepr<span class="sc">::</span><span class="fu">select_samples_by_age</span>(</span>
+<span id="cb1-22"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="at">age_lim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">15e3</span>)</span>
+<span id="cb1-23"><a href="" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb1-24"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Add taxa &amp; classify all data to a genus level</span></span>
+<span id="cb1-25"><a href="" aria-hidden="true" tabindex="-1"></a>  vaultkeepr<span class="sc">::</span><span class="fu">get_taxa</span>(<span class="at">classify_to =</span> <span class="st">"genus"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb1-26"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Extract only Picea data</span></span>
+<span id="cb1-27"><a href="" aria-hidden="true" tabindex="-1"></a>  vaultkeepr<span class="sc">::</span><span class="fu">select_taxa_by_name</span>(<span class="at">sel_taxa =</span> <span class="st">"Picea"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb1-28"><a href="" aria-hidden="true" tabindex="-1"></a>  vaultkeepr<span class="sc">::</span><span class="fu">extract_data</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="example-project-2" class="slide level2">
+<h2>Example project</h2>
+
+<img data-src="Materials/Examples/fig_na_plots_picea.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
 <section id="vegvault-1" class="slide level2">
 <h2><span class="bold">VegVault</span></h2>
 <div class="columns">
@@ -491,7 +550,7 @@
 <ul>
 <li class="fragment">A global database linking paleo- &amp; neo-vegetation data with functional traits &amp; abiotic drivers!</li>
 <li class="fragment">A powerful tool for researchers exploring biodiversity dynamics across time &amp; space</li>
-<li class="fragment">🔗 Website: <a href="bit.ly/VegVault">bit.ly/VegVault</a></li>
+<li class="fragment">🔗 Website: <a href="https://bit.ly/vaultkeepr">bit.ly/VegVault</a></li>
 </ul>
 </div></div>
 </section>
@@ -579,77 +638,29 @@
 <li class="fragment">🔗 Learn more: <a href="bit.ly/vaultkeepr">bit.ly/vaultkeepr</a></li>
 </ul>
 </div></div>
-</section></section>
-<section>
-<section id="use-cases" class="title-slide slide level1 inverse center">
-<h1><span class="bold r-fit-text">Use cases</span></h1>
-
 </section>
-<section id="section-1" class="slide level2">
-<h2></h2>
-<p><br></p>
-<div class="blockquote textcenter">
-<p>Spatiotemporal patterns of the Picea genus across North America since the Last Glaciar Maximum</p>
-</div>
-<p><br></p>
-
-<img data-src="Materials/poster_export/erb1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
-<section id="example-1" class="slide level2">
-<h2>Example 1</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p>Goal: To retrieve data for the genus <em>Picea</em> by selecting both contemporary and fossil pollen plot datasets, filtering samples by geographic boundaries (North America) and temporal range (0 to 15,000 yr BP), and harmonizing taxa to the genus level.</p>
-</div><div class="column fragment" style="width:50%;">
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="" aria-hidden="true" tabindex="-1"></a>data_na_plots_picea <span class="ot">&lt;-</span></span>
-<span id="cb1-2"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Access the VegVault</span></span>
-<span id="cb1-3"><a href="" aria-hidden="true" tabindex="-1"></a>  vaultkeepr<span class="sc">::</span><span class="fu">open_vault</span>(<span class="at">path =</span> <span class="st">"&lt;path_to_VegVault&gt;"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb1-4"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Start by adding dataset information</span></span>
-<span id="cb1-5"><a href="" aria-hidden="true" tabindex="-1"></a>  vaultkeepr<span class="sc">::</span><span class="fu">get_datasets</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb1-6"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Select both contemporary and paleo plot data</span></span>
-<span id="cb1-7"><a href="" aria-hidden="true" tabindex="-1"></a>  vaultkeepr<span class="sc">::</span><span class="fu">select_dataset_by_type</span>(</span>
-<span id="cb1-8"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="at">sel_dataset_type =</span> <span class="fu">c</span>(</span>
-<span id="cb1-9"><a href="" aria-hidden="true" tabindex="-1"></a>      <span class="st">"vegetation_plot"</span>,</span>
-<span id="cb1-10"><a href="" aria-hidden="true" tabindex="-1"></a>      <span class="st">"fossil_pollen_archive"</span></span>
-<span id="cb1-11"><a href="" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb1-12"><a href="" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb1-13"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Limit data to North America</span></span>
-<span id="cb1-14"><a href="" aria-hidden="true" tabindex="-1"></a>  vaultkeepr<span class="sc">::</span><span class="fu">select_dataset_by_geo</span>(</span>
-<span id="cb1-15"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="at">lat_lim =</span> <span class="fu">c</span>(<span class="dv">22</span>, <span class="dv">60</span>),</span>
-<span id="cb1-16"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="at">long_lim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">135</span>, <span class="sc">-</span><span class="dv">60</span>)</span>
-<span id="cb1-17"><a href="" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb1-18"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Add samples</span></span>
-<span id="cb1-19"><a href="" aria-hidden="true" tabindex="-1"></a>  vaultkeepr<span class="sc">::</span><span class="fu">get_samples</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb1-20"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Limit the samples by age</span></span>
-<span id="cb1-21"><a href="" aria-hidden="true" tabindex="-1"></a>  vaultkeepr<span class="sc">::</span><span class="fu">select_samples_by_age</span>(</span>
-<span id="cb1-22"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="at">age_lim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">15e3</span>)</span>
-<span id="cb1-23"><a href="" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb1-24"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Add taxa &amp; classify all data to a genus level</span></span>
-<span id="cb1-25"><a href="" aria-hidden="true" tabindex="-1"></a>  vaultkeepr<span class="sc">::</span><span class="fu">get_taxa</span>(<span class="at">classify_to =</span> <span class="st">"genus"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb1-26"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Extract only Picea data</span></span>
-<span id="cb1-27"><a href="" aria-hidden="true" tabindex="-1"></a>  vaultkeepr<span class="sc">::</span><span class="fu">select_taxa_by_name</span>(<span class="at">sel_taxa =</span> <span class="st">"Picea"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb1-28"><a href="" aria-hidden="true" tabindex="-1"></a>  vaultkeepr<span class="sc">::</span><span class="fu">extract_data</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div></div>
-</section>
-<section id="example-1-1" class="slide level2">
-<h2>Example 1</h2>
-
-<img data-src="Materials/Examples/fig_na_plots_picea.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
-<section id="section-2" class="slide level2">
-<h2></h2>
+<section id="another-example" class="slide level2">
+<h2>Another example</h2>
 <p><br></p>
 <div class="blockquote textcenter">
 <p>Patterns of CWM of plant height for South and Central Latin America between 6-12 ka</p>
 </div>
-
-<img data-src="Materials/poster_export/erb2.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
-<section id="example-2" class="slide level2">
-<h2>Example 2</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
 <p>Goal: obtaining data to be able to reconstruct plant height for South and Central America between 6-12 ka cal yr BP (thousand years before present).</p>
-</div><div class="column fragment" style="width:50%;">
+</section>
+<section id="another-example-1" class="slide level2">
+<h2>Another example</h2>
+<div class="columns">
+<div class="column" style="width:30%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Materials/poster_export/erb1.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column fragment" style="width:70%;">
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="" aria-hidden="true" tabindex="-1"></a>data_la_traits <span class="ot">&lt;-</span></span>
 <span id="cb2-2"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Acess the VegVault file</span></span>
@@ -690,10 +701,112 @@
 </div>
 </div></div>
 </section>
-<section id="example-2-1" class="slide level2">
-<h2>Example 2</h2>
+<section id="another-example-2" class="slide level2">
+<h2>Another example</h2>
 
-<img data-src="Materials/Examples/fig_la_merge.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section></section>
+<img data-src="Materials/Examples/fig_la_merge.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
+<section id="preprint-available" class="slide level2">
+<h2>📄 Preprint available!</h2>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:75%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Materials/VegVault_preprint_preview.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><a href="https://doi.org/10.1101/2025.01.31.635213"><img data-src="https://img.shields.io/badge/DOI-10.1101/2025.01.31.635213-blue"></a></p>
+</div><div class="column" style="width:25%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Materials/QR/qr_preprint.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section></section>
+<section>
+<section id="advert-time" class="title-slide slide level1 inverse center">
+<h1><span class="bold r-fit-text">Advert time!</span></h1>
+
+</section>
+<section id="laboratory-of-quantitative-ecology" class="slide level2">
+<h2>Laboratory of Quantitative Ecology</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li class="fragment"><p><span class="text-background-blue-dark">vegetation biodiversity</span>, including taxonomic, functional, and phylogenetic dimensions</p></li>
+<li class="fragment"><p>state-of-the-Art <span class="text-background-brown-dark">Tools</span> and <span class="text-background-brown-dark">Methods</span></p></li>
+<li class="fragment"><p><span class="text-background-green-dark">interdisciplinary</span> approach</p></li>
+<li class="fragment"><p>more info at <a href="https://bit.ly/CUNI_QuantitativeEcology">bit.ly/CUNI_QuantitativeEcology</a></p></li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Materials/Logos/lab_logo_nobg.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="open-science" class="slide level2">
+<h2>Open Science</h2>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><br></p>
+<ul>
+<li class="fragment">Open Data, Open Source, Open Access</li>
+<li class="fragment">Advocating for reproducibility and transparency</li>
+<li class="fragment">Open Science Champion at CUNI</li>
+</ul>
+</div><div class="column fragment" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Materials/OS_champion.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="sprout" class="slide level2">
+<h2><span class="bold">SPROuT</span></h2>
+<p><strong>S</strong>cience <strong>P</strong>owered through <strong>R</strong>eproducibility, <strong>O</strong>penness, and <strong>T</strong>eamwork</p>
+<div class="columns">
+<div class="column" style="width:30%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Materials/Logos/sprout_logo_nobg.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:70%;">
+<ul>
+<li class="fragment">How to manage your files and code?</li>
+<li class="fragment">How to make your research reproducible?</li>
+<li class="fragment">How to never lose your changes and data?</li>
+<li class="fragment">How to collaborate with others?</li>
+<li class="fragment">How to make cool presentation like this one?</li>
+</ul>
+</div><p><span class="bold text-color-white">Highly</span> recomended for <span class="bold text-color-white">all</span> Geobotany students</p>
+</div>
+</section></section>
 <section id="references" class="title-slide slide level1 title center">
 <h1><span class="bold r-fit-text">References</span></h1>
 <div class="columns">
