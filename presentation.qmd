@@ -76,7 +76,7 @@ include_local_figure("poster_export/c1.png")
 
 ```{r}
 #| label: linktree QR
-include_local_figure("About_me/qr_linktree.png")
+include_local_figure("QR/qr_linktree.png")
 ```
 :::
 
@@ -385,6 +385,61 @@ data_la_traits <-
 #| label: LA_cwm_plot
 include_local_figure("Examples/fig_la_merge.png")
 ```
+
+## 📄 Preprint available!
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="75%"}
+
+```{r}
+#| label: preprint_preview
+include_local_figure("VegVault_preprint_preview.png")
+```
+[![](https://img.shields.io/badge/DOI-10.1101/2025.01.31.635213-blue)](https://doi.org/10.1101/2025.01.31.635213)
+
+:::
+
+::: {.column width="25%"}
+
+```{r}
+#| label: preprint_qr
+include_local_figure("QR/qr_preprint.png")
+```
+
+:::
+::::
+
+## Open Science
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%" .incremental}
+
+<br>
+
+- Open Data, Open Source, Open Access
+- Advocating for reproducibility and transparency
+- Open Science Champion at CUNI
+:::
+
+::: {.column width="50%" .fragment}
+
+```{r}
+#| label: OS_champion
+include_local_figure("OS_champion.png")
+```
+
+:::
+
+
+::::
+
+# [Teaching]{.bold .r-fit-text} {.inverse}
 
 # [References]{.bold .r-fit-text} {.title}
 
