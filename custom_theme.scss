@@ -139,10 +139,13 @@ $backgroundColor: $beigeLight !default;
   color: $backgroundColor;
 }
 
-.textcenter {
+.text-center {
   text-align: center;
 }
 
+.text-cast-shadow {
+  text-shadow: 3px 4px 5px $blueDark;
+}
 
 // Typography
 $mainFont: "Renogate", sans-serif !default;
@@ -177,7 +180,7 @@ body {
 
 a {
   color:  $greenDark !important;
-  text-decoration: none;
+  text-decoration: underline !important;
 
   &:hover {
      color: $greenDark !important;
@@ -195,29 +198,31 @@ h1,
   letter-spacing: $headingLetterSpacing;
   font-weight: $headingFontWeight;
   margin-top: $largeMargin;
-  text-shadow: 3px 4px 5px $blueDark;
+  text-shadow: 3px 4px 5px $blueLight;
 }
 
 h2,
 .reveal h2 {
   font-family: $headingFont;
-  color: $blueLight;
+  color: $white;
   font-size: $heading2Size;
   line-height: $headingLineHeight;
   letter-spacing: $headingLetterSpacing;
   font-weight: $headingFontWeight;
   margin-top: $blockMargin;
+  text-shadow: 3px 4px 5px $blueDark;
 }
 
 h3,
 .reveal h3 {
   font-family: $headingFont;
-  color: $blueDark;
+  color: $blueLight;
   font-size: $heading3Size;
   line-height: $headingLineHeight;
   letter-spacing: $headingLetterSpacing;
   font-weight: $headingFontWeight;
   margin-top: $smallMargin;
+  text-shadow: 3px 4px 5px $blueDark;
 }
 
 /* Code block */
@@ -279,13 +284,14 @@ ul {
 /* Blockquote */
 .reveal .blockquote {
   font-style: italic;
-  border-left: 6px solid $blueDark;
+  border-left: 6px solid $white;
   padding: $smallMargin;
-  border-radius: 25px;
-  border-top: 3px solid $beigeDark;
-  border-bottom: 3px solid $beigeDark;
-  border-right: 3px solid $beigeDark;
+  // border-radius: 25px;
+  border-top: 3px solid $blueLight;
+  border-bottom: 3px solid $blueLight;
+  border-right: 3px solid $blueLight;
   background-color: $blueLight;
+  box-shadow: 3px 4px 5px $blueDark;
   transition:
     background-color 0.3s ease,
     border-color 0.3s ease;
