@@ -42,29 +42,35 @@ Ondřej Mottl
 
 2025-03-23
 
-## {background-image="Materials/poster_export/bg.png" background-opacity="0.50"}
+# 🖼️Set the scene{background-image="Materials/poster_export/gb_ds.png" background-opacity="0.50"}
 
-:::{.blockquote .fragment .textcenter}
-Most biodiversity models rely on recent data—❌but ecosystems evolve over millennia!
+:::{.blockquote .fragment .text-center}
+Most biodiversity models rely on **contemporary** data
+
+::: {.fragment}
+❌but ecosystems evolve over millennia!
+::: 
+
 :::
 
 <br>
 
-:::{.blockquote .fragment .textcenter}
-There are many biodiversity databases—❌but they are often not connected!
+:::{.blockquote .fragment .text-center}
+There are **many** biodiversity databases
+
+::: {.fragment}
+❌but they are often not connected!
+:::
+
 :::
 
 <br>
 
-:::{.blockquote .fragment .textcenter}
-What if we want to combine data from multiple databases and analyze them together? 🤔
+:::{.blockquote .fragment .text-center}
+What if we want to combine data from **multiple databases** and analyze them **together**? 🤔
 :::
 
-::: {.footer}
-Image created by Bing 
-:::
-
-## About me
+## 🧙About me {background-image="Materials/poster_export/gb_ds.png" background-opacity="0.20"}
 
 :::: {.columns}
 
@@ -84,7 +90,7 @@ include_local_figure("QR/qr_linktree.png")
 :::
 
 ::: {.column width="62%"}
-[Ondra Mottl]{.bold .r-fit-text .text-color-white .text-pixel-font}
+### [Ondra Mottl]{.bold .r-fit-text .text-color-white .text-pixel-font}
 Assistant Professor at [Charles University](https://cuni.cz/UK-1.html)
 <br>
 
@@ -98,9 +104,9 @@ Assistant Professor at [Charles University](https://cuni.cz/UK-1.html)
 
 ::::
 
-## Example project
+## 🕹️Example project {background-image="Materials/poster_export/gb_ds.png" background-opacity="0.20"}
 
-:::{.blockquote .textcenter}
+:::{.blockquote .text-center}
 Spatiotemporal patterns of the Picea genus across North America since the Last Glaciar Maximum
 :::
 
@@ -109,6 +115,7 @@ Spatiotemporal patterns of the Picea genus across North America since the Last G
 
 ::: {.column width="30%"}
 
+<br>
 <br>
 
 ```{r}
@@ -119,30 +126,36 @@ include_local_figure("poster_export/erb2.png")
 :::
 
 ::: {.column width="70%" .incremental}
-- Fossil pollen data
-  - Access Neotoma
-  - Download process only NA between 0-15 ka BP
-  - harmonize to genus level
-- Contemporary vegetation data
-  - Access BIEN & sPlotOpen & ...
-  - process only NA
-  - harmonize to genus level
+
+<br>
+
+:::{.fragment}
+We need:
+:::
+
+- [Contemporary vegetation data]{.text-background-blue-light}
+  - Access [BIEN]{.bold .italic} & [sPlotOpen]{.bold .italic} & ...
+  - Download & Process only North America
+- [Fossil pollen data]{.text-background-blue-dark}
+  - Access [Neotoma]{.bold .italic}
+  - Download & process only North America between 0-15 ka BP
+- [Harmonize]{.text-background-brown-dark} everything to genus level
 :::
 
 ::::
 
-## Example project
+## 🕹️Example project {background-image="Materials/poster_export/gb_ds.png" background-opacity="0.20"}
 
 :::: {.columns}
 
 ::: {.column width="50%"}
-Goal: To retrieve data for the genus *Picea* by selecting both contemporary and fossil pollen plot datasets, filtering samples by geographic boundaries (North America) and temporal range (0 to 15,000 yr BP), and harmonizing taxa to the genus level. 
+**Goal**: To retrieve data for the genus *Picea* by selecting plot datasets for both [contemporary]{.text-background-blue-light} and [fossil pollen]{.text-background-blue-dark}, filtering samples by geographic boundaries (*North America*) and temporal range (0 to 15,000 yr BP), and [harmonizing taxa]{.text-background-brown-dark} to the genus level.😱 
 :::
 
 ::: {.column width="50%"} 
 
 :::{.fragment}
-Not so difficult with [VegVault]{.bold .text-pixel-font .text-color-white}!
+Not so difficult with [VegVault]{.bold .text-pixel-font .text-color-white .text-cast-shadow}!
 :::
 
 ::: {.fragment}
@@ -186,14 +199,14 @@ data_na_plots_picea <-
 
 ::::
 
-## Example project
+## 🕹️Example project {background-image="Materials/poster_export/gb_ds.png" background-opacity="0.20"}
 
 ```{r}
 #| label: Picea_map_plot
 include_local_figure("Examples/fig_na_plots_picea.png")
 ```
 
-## [VegVault]{.bold}
+# 🏛️[VegVault]{.bold .text-pixel-font} {background-image="Materials/poster_export/gb_ds.png" background-opacity="0.20"}
 
 :::: {.columns}
 
@@ -207,27 +220,28 @@ include_local_figure("Logos/VegVault_logo.png")
 
 ::: {.column width="50%" .incremental}
 
-* A global database linking paleo- & neo-vegetation data with functional traits & abiotic drivers! 
-* A powerful tool for researchers exploring biodiversity dynamics across time & space
-* 🔗 Website: [bit.ly/VegVault](https://bit.ly/vaultkeepr)
+* A global database linking [interdisciplinary]{.text-background-blue-light} vegetation data! 
+* A powerful tool for researchers exploring **biodiversity** dynamics across [time & space]{.text-background-blue-dark}
+* Open Source & [Reproducible]{.text-background-brown-dark}
+* 🔗 Website: [bit.ly/VegVault](https://bit.ly/VegVault)
 
 :::
 
 ::::
 
-## [VegVault]{.bold}
+## 🏛️[VegVault]{.bold .text-pixel-font} {background-image="Materials/poster_export/gb_ds.png" background-opacity="0.20"}
 
 :::: {.columns}
 
-::: {.column width="35%"}
+::: {.column width="50%"}
 
-* 🌿 Paleoecological records (Neotoma, FOSSILPOL)
-* 🌱 Contemporary vegetation (BIEN, sPlotOpen)
-* 🌾 Functional traits (TRY)
-* 🌍 Climate & soil data (CHELSA, WoSIS)
+* 🌿 [Paleoecological records]{.text-background-blue-light} ([Neotoma]{.italic}, [FOSSILPOL]{.italic})
+* 🌱 [Contemporary vegetation]{.text-background-blue-dark} ([BIEN]{.italic}, [sPlotOpen]{.italic})
+* 🌾 [Functional traits]{.text-background-brown-dark} ([TRY]{.italic}, [BIEN]{.italic})
+* 🌍 [Climate & soil data]{.text-background-brown-light} ([CHELSA]{.italic}, [WoSIS]{.italic})
 :::
 
-::: {.column width="65%"}
+::: {.column width="50%"}
 
 ```{r}
 #| label: Scheme
@@ -237,7 +251,7 @@ include_local_figure("VegVault/assembly_viz_03.png")
 
 ::::
 
-## [VegVault]{.bold}
+## 🏛️[VegVault]{.bold .text-pixel-font} {background-image="Materials/poster_export/gb_ds.png" background-opacity="0.20"}
 
 🔢In numbers: 110 GB of SQLite data | 29 tables & 87 variables | 480,000+ datasets | 13M+ samples  | 110,000+ taxa | 11M+ trait values | 8 abiotic variables
 
@@ -249,11 +263,19 @@ include_local_figure("VegVault/p_n_datasetes_per_type_per_source_type .png")
 :::
 
 
-## [VegVault]{.bold}
+## 🏛️[VegVault]{.bold .text-pixel-font} {background-image="Materials/poster_export/gb_ds.png" background-opacity="0.20"}
 
-Interdisciplinary integration:
+Key inovations:
 
 :::: {.columns}
+
+::: {.column width="35%" .incremental}
+
+* Plot based data (both [contemporary]{.text-background-blue-light} and [paleo]{.text-background-blue-dark})
+* [Abiotic]{.text-background-brown-dark} data linked to each plot
+* [Taxonomic classification]{.text-background-brown-light} up to family level
+
+:::
 
 ::: {.column width="65%" .fragment}
 
@@ -263,22 +285,13 @@ include_local_figure("Examples/fig_cz_jsdm.png")
 ```
 :::
 
-::: {.column width="35%" .incremental}
-
-<br>
-
-* Plot based data (both contemporary and paleo)
-* Abiotic data linked to each plot
-* Taxonomic classification
-
-:::
 
 ::::
 
 
-## {[vaultkeepr]{.bold}}
+## 🔑{[vaultkeepr]{.bold}} {background-image="Materials/poster_export/gb_ds.png" background-opacity="0.20"}
 
-An R package📦–your key🔑 to VegVault🌿🔒🏛️
+An Open Source R package📦–your key🔑 to [VegVault]{.bold .text-color-white .text-pixel-font .text-cast-shadow}🌿🔒🏛️
 
 :::: {.columns}
 
@@ -301,23 +314,25 @@ include_local_figure("Logos/vaultkeeper_logo.png")
 * ✅ No SQL required – just load & go!
 * ✅ Filter by taxa, traits, time & space
 * ✅ Directly usable in R for analysis
-* 🔗 Learn more: [bit.ly/vaultkeepr](bit.ly/vaultkeepr)
+* 🔗 Learn more: [bit.ly/vaultkeepr](https://bit.ly/vaultkeepr)
 
 :::
 
 ::::
 
-## Another example
+## 🕹️Another example {background-image="Materials/poster_export/gb_ds.png" background-opacity="0.20"}
 
 <br>
 
-:::{.blockquote .textcenter}
-Patterns of CWM of plant height for South and Central Latin America between 6-12 ka
+:::{.blockquote .text-center}
+Patterns of CWM of plant height for South and Central America between 6-12 ka
 :::
 
-Goal: obtaining data to be able to reconstruct plant height for South and Central America between 6-12 ka cal yr BP (thousand years before present).
+<br>
 
-## Another example
+**Goal**: obtaining data to be able to reconstruct [CWM of plant height]{.text-background-blue-light} for [South]{.text-background-blue-dark} and [Central America]{.text-background-blue-dark} between [6-12 ka cal yr BP]{.text-background-brown-dark} (thousand years before present).
+
+## 🕹️Another example {background-image="Materials/poster_export/gb_ds.png" background-opacity="0.20"}
 
 :::: {.columns}
 
@@ -328,7 +343,7 @@ include_local_figure("poster_export/erb1.png")
 ```
 :::
 
-::: {.column width="70%" .fragment} 
+::: {.column width="70%"} 
 
 ```{r}
 #| label: LA_cwm
@@ -376,14 +391,14 @@ data_la_traits <-
 
 ::::
 
-## Another example
+## 🕹️Another example {background-image="Materials/poster_export/gb_ds.png" background-opacity="0.20"}
 
 ```{r}
 #| label: LA_cwm_plot
 include_local_figure("Examples/fig_la_merge.png")
 ```
 
-## 📄 Preprint available!
+## 📄 Preprint available! {background-image="Materials/poster_export/gb_ds.png" background-opacity="0.20"}
 
 <br>
 
@@ -411,19 +426,19 @@ include_local_figure("QR/qr_preprint.png")
 
 # [Advert time!]{.bold .r-fit-text} {.inverse}
 
-## Laboratory of Quantitative Ecology
+## 🧑‍💻Laboratory of Quantitative Ecology {background-image="Materials/poster_export/gb_ds.png" background-opacity="0.20"}
 
 :::: {.columns}
 
 ::: {.column width="60%" .incremental}
 
-* [vegetation biodiversity]{.text-background-blue-dark}, including taxonomic, functional, and phylogenetic dimensions 
+* [Vegetation biodiversity]{.text-background-blue-light}, including taxonomic, functional, and phylogenetic dimensions 
 
-* state-of-the-Art [Tools]{.text-background-brown-dark} and [Methods]{.text-background-brown-dark}
+* State-of-the-Art [Tools]{.text-background-blue-dark} and [Methods]{.text-background-blue-dark}
 
-* [interdisciplinary]{.text-background-green-dark} approach
+* [Interdisciplinary]{.text-background-brown-dark} approach
 
-* more info at [bit.ly/CUNI_QuantitativeEcology](https://bit.ly/CUNI_QuantitativeEcology)
+* 🔗 Website: [bit.ly/CUNI_QuantitativeEcology](https://bit.ly/CUNI_QuantitativeEcology)
 
 :::
 
@@ -437,7 +452,7 @@ include_local_figure("Logos/lab_logo_nobg.png")
 
 ::::
 
-## Open Science
+## 📖Open Science {background-image="Materials/poster_export/gb_ds.png" background-opacity="0.20"}
 
 <br>
 
@@ -447,12 +462,13 @@ include_local_figure("Logos/lab_logo_nobg.png")
 
 <br>
 
-- Open Data, Open Source, Open Access
-- Advocating for reproducibility and transparency
-- Open Science Champion at CUNI
+- Open Science [Champion]{.text-background-brown-dark} at CUNI
+- Open Data, [Open Source]{.text-background-blue-light}, Open Access
+- Advocating for [reproducibility]{.text-background-blue-dark} and transparency
+
 :::
 
-::: {.column width="50%" .fragment}
+::: {.column width="50%"}
 
 ```{r}
 #| label: OS_champion
@@ -462,9 +478,12 @@ include_local_figure("OS_champion.png")
 :::
 ::::
 
-## [SPROuT]{.bold}
+## 🪄[SPROuT]{.bold} {background-image="Materials/poster_export/gb_ds.png" background-opacity="0.20"}
 
-**S**cience **P**owered through **R**eproducibility, **O**penness, and **T**eamwork 
+
+:::{.text-center}
+[S]{.text-background-blue-dark}cience [P]{.text-background-blue-dark}owered through [R]{.text-background-blue-dark}eproducibility, [O]{.text-background-blue-dark}penness, and [T]{.text-background-blue-dark}eamwork 
+:::
 
 :::: {.columns}
 
@@ -484,13 +503,90 @@ include_local_figure("Logos/sprout_logo_nobg.png")
 - How to make cool presentation like this one?
 :::
 
-[Highly]{.bold .text-color-white} recomended for [all]{.bold .text-color-white} Geobotany students
+:::{.fragment}
+Data Science, Version Control, R, QUARTO, ... all [specifically tailored for ecologists]{.text-background-blue-light}!
+
+[Highly]{.bold .text-background-brown-dark} recomended for [all]{.bold .text-background-brown-dark} Geobotany students‼️
+:::
 
 ::::
 
+## 🪄[SPROuT]{.bold} {background-image="Materials/poster_export/gb_ds.png" background-opacity="0.20"}
+
+What do the students say?
+
+:::{.blockquote .fragment}
+I truly enjoyed using SPROuT! It's an invaluable tool and definitely a must-have for anyone working in academia.
+:::
+
+<br>
+
+:::{.blockquote .fragment}
+It was a very useful course that everone doing or planing to do research should attend to.
+:::
+
+<br>
+
+:::{.blockquote .fragment}
+Every lecture provided valuable skills essential for my development as a researcher
+:::
+
+## 🚀SSoQE 2025
 
 
-# [References]{.bold .r-fit-text} {.title}
+:::{.text-center .r-fit-text}
+[S]{.text-background-blue-dark}cience [S]{.text-background-blue-dark}chool [o]{.text-background-blue-dark}f, [Q]{.text-background-blue-dark}uantitative [E]{.text-background-blue-dark}cology
+:::
+
+Joined [international]{.text-background-blue-light} course by **Charles University** and the **University of Bayreuth** 
+
+:::: {.columns}
+
+::: {.column width="70%" .incremental}
+- 📅Date: **15.09.2025 - 20.09.2025** (Monday to Saturday)
+- 🗺️Location: Mariánské Lázně, Czech Republic
+- 🔬Engaging Lectures, 🤝[Hands-On Practice]{.text-background-brown-dark}, 🍻Social Events,...
+- 🔗 Website: [bit.ly/SSoQE](https://bit.ly/SSoQE)
+:::
+
+::: {.column width="30%"}
+
+```{r}
+#| label: SSoQE logo
+include_local_figure("Logos/ssoqe_logo.png")
+```
+:::
+
+::::
+
+## 🚀SSoQE 2025
+
+:::: {.columns}
+
+::: {.column width="46%"}
+
+```{r}
+#| label: SSoQE_2025_1
+include_local_figure("SSoQE/ssoqe_1.jpg")
+```
+
+```{r}
+#| label: SSoQE_2025_2
+include_local_figure("SSoQE/ssoqe_2.jpg")
+```
+
+:::
+
+::: {.column width="54%"}
+```{r}
+#| label: SSoQE_2025_3
+include_local_figure("SSoQE/ssoqe_3.jpg")
+```
+:::
+
+::::
+
+# [This Presentation]{.bold .r-fit-text} {.title}
 
 :::: columns
 ::: {.column width="50%"}
@@ -501,6 +597,8 @@ include_local_figure("Logos/sprout_logo_nobg.png")
 [🖥️ Slides](https://ondrejmottl.github.io/VegVault-FlashPresentation-20250323/)
 :::
 ::::
+
+[![](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Author: [Ondrej Mottl](https://ondrejmottl.github.io/)
 
