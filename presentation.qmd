@@ -107,7 +107,7 @@ Assistant Professor at [Charles University](https://cuni.cz/UK-1.html)
 ## 🕹️Example project {background-image="Materials/poster_export/gb_ds.png" background-opacity="0.20"}
 
 :::{.blockquote .text-center}
-Spatiotemporal patterns of the Picea genus across North America since the Last Glaciar Maximum
+Spatiotemporal patterns of the Picea genus across North America since the Last Glacial Maximum
 :::
 
 
@@ -265,7 +265,7 @@ include_local_figure("VegVault/p_n_datasetes_per_type_per_source_type .png")
 
 ## 🏛️[VegVault]{.bold .text-pixel-font} {background-image="Materials/poster_export/gb_ds.png" background-opacity="0.20"}
 
-Key inovations:
+Key innovations:
 
 :::: {.columns}
 
@@ -278,6 +278,8 @@ Key inovations:
 :::
 
 ::: {.column width="65%" .fragment}
+
+<br>
 
 ```{r}
 #| label: JSDM_exampe
@@ -506,7 +508,7 @@ include_local_figure("Logos/sprout_logo_nobg.png")
 :::{.fragment}
 Data Science, Version Control, R, QUARTO, ... all [specifically tailored for ecologists]{.text-background-blue-light}!
 
-[Highly]{.bold .text-background-brown-dark} recomended for [all]{.bold .text-background-brown-dark} Geobotany students‼️
+[Highly]{.bold .text-background-brown-dark} recommended for [all]{.bold .text-background-brown-dark} Geobotany students‼️
 :::
 
 ::::
